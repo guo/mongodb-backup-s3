@@ -1,4 +1,4 @@
-FROM mongo
+FROM mongo:4.2
 
 RUN apt-get update && apt-get -y install cron awscli
 
