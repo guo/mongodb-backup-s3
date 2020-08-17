@@ -1,4 +1,4 @@
-# mongodb-backup-s3
+# mongodb-backup-s3 for v4.2
 
 This image runs mongodump to backup data using cronjob to an s3 bucket
 
