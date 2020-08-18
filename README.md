@@ -2,6 +2,11 @@
 
 This image runs mongodump to backup data using cronjob to an s3 bucket
 
+## Changes after forking
+
+- support V4.2
+- use MONGODB_URI as auth instead of PORT/USER/PASS auth.
+
 ## Usage:
 
 ```
@@ -9,25 +14,11 @@ docker run -d \
   --env AWS_ACCESS_KEY_ID=awsaccesskeyid \
   --env AWS_SECRET_ACCESS_KEY=awssecretaccesskey \
   --env BUCKET=s3bucket
-  --env MONGODB_HOST=mongodb.host \
-  --env MONGODB_PORT=27017 \
-  --env MONGODB_USER=admin \
-  --env MONGODB_PASS=password \
-  halvves/mongodb-backup-s3
+  --env MONGODB_URI=URI \
+  guos/mongodb-v4.2-backup-s3
 ```
 
-If you link `halvves/mongodb-backup-s3` to a mongodb container with an alias named mongodb, this image will try to auto load the `host`, `port`, `user`, `pass` if possible. Like this:
-
-```
-docker run -d \
-  --env AWS_ACCESS_KEY_ID=myaccesskeyid \
-  --env AWS_SECRET_ACCESS_KEY=mysecretaccesskey \
-  --env BUCKET=mybucketname \
-  --env BACKUP_FOLDER=a/sub/folder/path/ \
-  --env INIT_BACKUP=true \
-  --link my_mongo_db:mongodb \
-  halvves/mongodb-backup-s3
-```
+--- old content ---
 
 Add to a docker-compose.yml to enhance your robotic army:
 
