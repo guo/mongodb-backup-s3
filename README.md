@@ -18,6 +18,8 @@ docker run -d \
   guos/mongodb-v4.2-backup-s3
 ```
 
+Recommend to use caprover to config your auto-pilot mongodb backup jobs.
+
 --- old content ---
 
 Add to a docker-compose.yml to enhance your robotic army:
