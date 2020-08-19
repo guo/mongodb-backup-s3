@@ -20,6 +20,28 @@ docker run -d \
 
 Recommend to use caprover to config your auto-pilot mongodb backup jobs.
 
+## use Caprover
+
+1. add a new app
+2. deploy from docker using `guos/mongodb-v4.2-backup-s3` image
+3. add config var as follows
+```
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+BUCKET=
+BACKUP_FOLDER=
+MONGODB_URI=mongodb+srv://
+CRON_TIME=0 3 * * *
+TZ=US/Eastern
+A=1
+CRON_TZ=US/Eastern
+INIT_BACKUP=true
+INIT_RESTORE=
+DISABLE_CRON=
+```
+4. keep it running
+
+
 --- old content ---
 
 Add to a docker-compose.yml to enhance your robotic army:
